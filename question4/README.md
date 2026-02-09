@@ -63,14 +63,13 @@ All BFS and analysis logic is implemented in `bfs.c` and declared in `bfs.h`.
 - Compile
 
 ``` bash
-gcc main.c bfs.c -o q4_bfs
+gcc main.c bfs.c -o bfs
 ```
 
 - Run
 
 ``` bash
-./q4_bfs        # on Linux / macOS
-q4_bfs.exe      # on Windows
+./bfs
 ```
 
 # Sample Output (Excerpt)

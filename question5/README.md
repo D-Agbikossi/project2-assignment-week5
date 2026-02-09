@@ -63,15 +63,13 @@ All algorithm logic is implemented in `bellman_ford.c` and declared in `bellman_
 - Compile
 
 ``` bash
-gcc main.c bellman_ford.c -o q5_bellman
+gcc main.c bellman_ford.c -o bellman
 ```
 
 - Run
 
 ``` bash
-./q5_bellman        # on Linux / macOS
-q5_bellman.exe      # on Windows
-```
+./bellman
 
 # Sample Output (Excerpt)
 

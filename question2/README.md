@@ -60,14 +60,13 @@ All heap logic is implemented in `passenger_heap.c` and declared in `passenger_h
 - Compile
 
 ``` bash
-gcc main.c passenger_heap.c -o q2_passengers
+gcc main.c passenger_heap.c -o passengers
 ```
 
 - Run
 
 ``` bash
-./q2_passengers        # on Linux / macOS
-q2_passengers.exe      # on Windows
+./passengers
 ```
 
 # Sample Output (Excerpt)

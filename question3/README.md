@@ -68,14 +68,13 @@ All MST logic is implemented in `mst.c` and declared in `mst.h`.
 - Compile
 
 ``` bash
-gcc main.c mst.c -o q3_mst
+gcc main.c mst.c -o mst
 ```
 
 - Run
 
 ``` bash
-./q3_mst        # on Linux / macOS
-q3_mst.exe      # on Windows
+./mst
 ```
 
 # Sample Output (Excerpt)
