@@ -84,10 +84,33 @@ void removeJob(MaxHeap *heap, int priority) {
     heapifyUp(heap, index);
 }
 
-/* Display heap */
+/* Display heap as a tree (level-order) */
 void displayHeap(const MaxHeap *heap) {
-    printf("Heap (JobID : Priority)\n");
-    for (int i = 0; i < heap->size; i++)
-        printf("%c : %d\n", heap->arr[i].id, heap->arr[i].priority);
+    printf("Heap as tree (JobID:Priority by level)\n");
+
+    int level = 0;
+    int itemsOnLevel = 0;
+    int capacityThisLevel = 1; /* 2^level */
+
+    for (int i = 0; i < heap->size; i++) {
+        if (itemsOnLevel == 0) {
+            printf("Level %d: ", level);
+        }
+
+        printf("(%c,%d) ", heap->arr[i].id, heap->arr[i].priority);
+        itemsOnLevel++;
+
+        if (itemsOnLevel == capacityThisLevel) {
+            printf("\n");
+            level++;
+            itemsOnLevel = 0;
+            capacityThisLevel *= 2;
+        }
+    }
+
+    if (itemsOnLevel != 0) {
+        printf("\n");
+    }
+
     printf("\n");
 }

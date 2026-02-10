@@ -92,10 +92,32 @@ void removeByRisk(MaxHeap *heap, int risk) {
 }
 
 void displayHeap(const MaxHeap *heap) {
-    printf("Current Max-Heap (Passenger : Risk):\n");
+    printf("Current Max-Heap as tree (Passenger:Risk by level):\n");
+
+    int level = 0;
+    int itemsOnLevel = 0;
+    int capacityThisLevel = 1; /* 2^level */
+
     for (int i = 0; i < heap->size; i++) {
-        printf("%s : %d\n", heap->arr[i].name, heap->arr[i].risk);
+        if (itemsOnLevel == 0) {
+            printf("Level %d: ", level);
+        }
+
+        printf("(%s,%d) ", heap->arr[i].name, heap->arr[i].risk);
+        itemsOnLevel++;
+
+        if (itemsOnLevel == capacityThisLevel) {
+            printf("\n");
+            level++;
+            itemsOnLevel = 0;
+            capacityThisLevel *= 2;
+        }
     }
+
+    if (itemsOnLevel != 0) {
+        printf("\n");
+    }
+
     printf("\n");
 }
 

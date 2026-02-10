@@ -60,26 +60,31 @@ gcc main.c heap.c -o scheduler
 ```
 
 # Sample Output (Excerpt)
-Initial Binary Tree:
-A : 42
-B : 17
-C : 93
-...
+Initial Binary Tree (array-based complete binary tree printed by level):
+Level 0: (A,42)
+Level 1: (B,17) (C,93)
+Level 2: (D,28) (E,65) (F,81) (G,54)
+Level 3: (H,60) (I,99) (J,73) (K,88)
 
 After Building Max-Heap:
-L : 99
-K : 88
-...
+Level 0: (I,99)
+Level 1: (K,88) (C,93)
+Level 2: (H,60) (J,73) (F,81) (G,54)
+Level 3: (B,17) (D,28) (A,42) (E,65)
 
-After Inserting Urgent Job:
-M : 100
-...
+After Inserting Urgent Job (L,100):
+Level 0: (L,100)
+Level 1: (K,88) (I,99)
+Level 2: (H,60) (J,73) (C,93) (G,54)
+Level 3: (B,17) (D,28) (A,42) (E,65) (F,81)
 
-After Removing Urgent Job:
-L : 99
-...
+After Removing Urgent Job (priority 100):
+Level 0: (I,99)
+Level 1: (K,88) (C,93)
+Level 2: (H,60) (J,73) (F,81) (G,54)
+Level 3: (B,17) (D,28) (A,42) (E,65)
 
-(Actual output order may vary based on heap operations)
+(Exact level contents may vary slightly if you change the input array, but the root will always have the highest priority and each level will respect the Max-Heap property.)
 
 # Key Features
 
